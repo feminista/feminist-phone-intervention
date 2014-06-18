@@ -1,0 +1,25 @@
+application: feminist-phoneline #NOTE: Replace this with your own application name.
+version: 1
+runtime: php
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: phoneicon.ico
+  upload: phoneicon\.ico
+
+- url: /
+  script: main.php
+
+- url: /call
+  script: phoneline/call.php
+
+- url: /text
+  script: phoneline/text.php
+
+- url: /recording
+  script: phoneline/recording.php
+
+- url: /recordings
+  static_dir: phoneline/recordings
